@@ -7,6 +7,7 @@ File: [rename.py](rename.py)
 Sypported on:
 * Linux
 * MAC
+* Windows
 
 **Example:**
 Removing "-junk" from filenames.
