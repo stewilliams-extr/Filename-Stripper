@@ -4,6 +4,10 @@ This is a simple script that will rename all files in a directory and strip out 
 
 File: [rename.py](rename.py)
 
+Sypported on:
+* Linux
+* MAC
+
 **Example:**
 Removing "-junk" from filenames.
 ```
