@@ -2,7 +2,7 @@
 import os
 import re
 import sys
-import platform
+from platform import system
 """I made this script because I was tired of removing some small text
 from A long list of filenames.
 
@@ -13,7 +13,7 @@ you what it's going to change before it does it.
 #Variables
 move_cmd = "mv"
 
-if platform.system() == 'Windows':
+if system() == 'Windows':
     move_cmd = "move"
 
 #this raw_input captures the string to remove
