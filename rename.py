@@ -1,3 +1,4 @@
+#imports
 import os
 import re
 import sys
@@ -9,10 +10,11 @@ To use this program correctly, go to the folder where you want to remove text fr
 files and execute the python file.  Before the program makes changes it will tell
 you what it's going to change before it does it.
 """
-#Sorry no support for windows right now.
+#Variables
+move_cmd = "mv"
+
 if platform.system() == 'Windows':
-    print ("This scrpt is currently only supported on Linux")
-    sys.exit()
+    move_cmd = "move"
 
 #this raw_input captures the string to remove
 text_remove = raw_input('What string would you like to remove (Use "quotes if there is a space".)? ')
@@ -28,7 +30,7 @@ for filename in os.listdir("."):
     if text_remove in filename:
         new_name = re.sub(text_remove, '', filename)
         change.append(new_name)
-        commands.append(("mv \"{0}\" \"{1}\"").format(filename,new_name))
+        commands.append(("{0} \"{1}\" \"{2}\"").format(move_cmd,filename,new_name))
     else:
         nochange.append(filename)
 #Checking for a match and printing a warning to let you know what the script woud do.
